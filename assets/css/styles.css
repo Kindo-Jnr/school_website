@@ -769,7 +769,9 @@ body {
         gap: 30px;
         animation-duration: 30s;
     }
-    
+    .gallery-card img {
+        filter: grayscale(0%) !important;
+    }
   
 }
 
@@ -783,10 +785,46 @@ body {
         width: 100px;
         height: 100px;
     }
+   
 }
 
 /* Blogs Section------- */
 
+/* Gallerry Section-------------- */
+.gallery-slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-slider-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.gallery-card {
+    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.gallery-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+.gallery-card:hover img{
+    filter: grayscale(0%);
+}
 
 /* Footer Section----- */
 /* Footer Section */
@@ -1144,7 +1182,7 @@ body {
 
 @media (max-width: 768px) {
     .about-hero {
-        height: 50vh;
+        height: 100vh;
     }
     
     .mission-image img,
