@@ -1209,3 +1209,100 @@ body {
         height: 200px;
     }
 }
+
+/* Events Page--- */
+.events-hero {
+    background-image: url('/assets/images/events-home.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Speakers Section------ */
+/* Speakers Section */
+.speakers-section {
+    background-color: #f8f9fa;
+}
+
+/* Speaker Card */
+.speaker-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.speaker-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.speaker-image {
+    width: 100%;
+    height: 350px;
+}
+
+.speaker-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Speaker Info (Initially hidden on desktop) */
+.speaker-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.speaker-card:hover .speaker-info {
+    transform: translateY(0);
+}
+
+.speaker-info h4 {
+    color: var(--second-text-color);
+    margin-bottom: 5px;
+}
+
+.speaker-info p {
+    color: var(--second-text-color);
+    margin-bottom: 0;
+}
+
+/* Mobile Styles - Always show info */
+@media (max-width: 768px) {
+    .speaker-info {
+        position: relative;
+        transform: translateY(0);
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+    }
+    
+    .speaker-image {
+        height: 300px;
+    }
+    .speaker-card:hover  {
+        transform: none;
+        box-shadow: none;
+    }
+    .speaker-card{
+        box-shadow: none;
+    }
+}
+
+/* Responsive Grid */
+@media (max-width: 576px) {
+    .speaker-image {
+        height: 250px;
+    }
+}
