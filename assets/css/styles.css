@@ -1480,7 +1480,7 @@ body {
 
 /* Gallery Page 1----------- */
 .gallery-page {
-    background-image: url('/assets/images/about-home.png');
+    background-image: url('/assets/images/gallery-page1.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
