@@ -215,7 +215,7 @@ body {
   .nav-links {
     position: absolute;
     right: 0;
-    top: 114px;
+    top: 70px;
     background-color: var(--bg-color);
     flex-direction: column;
     align-items: flex-start;
@@ -236,51 +236,47 @@ body {
   }
 
   @media screen and (max-width: 992px) {
-   
-    
     .dropdown-menu {
-     
-        display: none !important;
-        position: static !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        box-shadow: none;
-        padding: 0 !important;
-        margin-top: 0;
-        background: #f9f9f9;
-        max-height: 0;
-        overflow: hidden;
-        right: 0px !important;
-  transform: none !important;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+      display: none !important;
+      position: static !important;
+      width: 100% !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: none;
+      padding: 0 !important;
+      margin-top: 0;
+      background: #f9f9f9;
+      max-height: 0;
+      overflow: hidden;
+      right: 0px !important;
+      transform: none !important;
+      transition: max-height 0.3s ease, padding 0.3s ease;
     }
-    
+
     .dropdown-menu.active {
-        display: block !important;
-        max-height: 1000px; /* Adjust based on content */
-        padding: 15px 0 !important;
+      display: block !important;
+      max-height: 1000px; /* Adjust based on content */
+      padding: 15px 0 !important;
     }
-    
+
     .dropdown-content {
-        flex-direction: column;
+      flex-direction: column;
     }
-    
+
     .dropdown-image {
-        
-        width: 100% !important;
-        height: 200px;
-        border-radius: 0 !important;
-        margin-bottom: 15px;
+      width: 100% !important;
+      height: 200px;
+      border-radius: 0 !important;
+      margin-bottom: 15px;
     }
-    
+
     .dropdown-links li {
-        padding: 10px 25px !important;
+      padding: 10px 25px !important;
     }
-    
-    
-    }
-}
+  }
+  .navbar-logo img{
+    width: 30px;
+  }
   .dropdown-links {
     padding: 15px;
   }
@@ -303,13 +299,13 @@ body {
 }
 @media screen and (min-width: 993px) {
   .dropdown-menu {
-      display: block !important; /* Override any mobile styles */
+    display: block !important; /* Override any mobile styles */
   }
-  
+
   .nav-links li:hover .dropdown-menu {
-      opacity: 1 !important;
-      visibility: visible !important;
-      pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 }
 /* Burger animation */
@@ -826,7 +822,7 @@ body {
   .blog-img {
     height: 180px;
   }
-  
+
   .blog-content {
     padding: 1.5rem;
   }
@@ -1962,7 +1958,6 @@ body {
   height: 100%;
 }
 
-
 .team-img {
   width: 300px;
   height: 200px;
@@ -1980,8 +1975,8 @@ body {
 }
 
 /* Impact Section */
-.impact-section{
-    background-color: var(--button-color);
+.impact-section {
+  background-color: var(--button-color);
 }
 .impact-card {
   background: rgba(255, 255, 255, 0.1);
@@ -2029,7 +2024,7 @@ body {
   .team-hero {
     height: 100vh;
   }
-  .our-team-card{
+  .our-team-card {
     padding: 8px 15px;
   }
 
@@ -2053,29 +2048,25 @@ body {
   .team-hero {
     height: 90vh;
   }
-
- 
-  }
+}
 
 /* Responsive Grid */
 @media (max-width: 768px) {
-    .partner-logo {
-      height: 50px;
-      padding: 15px;
-      filter: grayscale(0%);
-
-    }
-    .partner-logo img {
-      max-height: 79px;
-      width: 105px;
-      max-width: 100%;
-    }
-
+  .partner-logo {
+    height: 50px;
+    padding: 15px;
+    filter: grayscale(0%);
   }
-  
-  @media (max-width: 576px) {
-    .partner-logo {
-      height: 50px;
-      padding: 10px;
-    }
+  .partner-logo img {
+    max-height: 79px;
+    width: 105px;
+    max-width: 100%;
   }
+}
+
+@media (max-width: 576px) {
+  .partner-logo {
+    height: 50px;
+    padding: 10px;
+  }
+}
