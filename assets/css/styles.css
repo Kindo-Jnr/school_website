@@ -242,10 +242,11 @@ body {
       width: 100% !important;
       opacity: 1 !important;
       visibility: visible !important;
-      box-shadow: none;
+      box-shadow: none !important;
       padding: 0 !important;
       margin-top: 0;
       background: #f9f9f9;
+      border: none !important;
       max-height: 0;
       overflow: hidden;
       right: 0px !important;
@@ -992,31 +993,50 @@ body {
 
 /* Footer Bottom */
 /* Custom Footer Styles */
-.footer-section {
-  position: relative;
+/* Floating Buttons */
+.floating-button {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.footer-logo {
-  height: 50px;
-  width: auto;
+.floating-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.back-to-top {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  background-color: var(--second-bg-color);
+/* WhatsApp Button */
+.whatsapp-btn {
+    background-color: #25D366; /* WhatsApp green */
+    bottom: 80px;
 }
 
-.back-to-top.active {
-  opacity: 1;
-  visibility: visible;
+/* Back to Top Button */
+.back-to-top-btn {
+    background-color: var(--button-color); /* Bootstrap primary blue */
+    bottom: 20px;
+    
 }
 
-.back-to-top:hover {
-  transform: translateY(-3px);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
 }
-
 /* Link Hover Effects */
 .footer-section a {
   transition: all 0.2s ease;
