@@ -43,10 +43,10 @@ body {
   align-items: center;
 }
 
-.navbar-logo img {
+/* .navbar-logo img {
   height: 40px;
   width: auto;
-}
+} */
 
 .nav-links {
   display: flex;
@@ -57,8 +57,11 @@ body {
 .nav-links li {
   position: relative;
   margin-left: 30px;
+  transition: all 0.3s ease; /* Add this */
 }
-
+.nav-links > li {
+  z-index: 100; /* Add this */
+}
 .nav-links a {
   color: var(--text-color);
   text-decoration: none;
@@ -89,21 +92,79 @@ body {
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 30%;
+  transform: translateX(20%);
   background-color: var(--white);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 15px 0;
-  width: 250px;
+  width: 850px;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
   z-index: 100;
+  pointer-events: none; /* Add this */
+}
+/* Dropdown content wrapper */
+.dropdown-content {
+  display: flex;
+  width: 100%;
+}
+
+/* Links section */
+.dropdown-links {
+  flex: 1;
+  padding: 20px;
+}
+
+.dropdown-links li {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-links li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-links a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+  padding: 8px 0;
+}
+
+.dropdown-links a:hover {
+  color: var(--hover-color);
+  padding-left: 10px;
+}
+
+/* Image section */
+.dropdown-image {
+  width: 600px;
+  background: #f5f5f5;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-image img {
+  width: 98%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover state */
+.nav-links li:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 .nav-links li:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto; /* Add this */
 }
 
 .dropdown-menu li {
@@ -117,21 +178,6 @@ body {
 
 .dropdown-menu li:last-child {
   border-bottom: none;
-}
-
-.dropdown-menu a {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dropdown-menu img {
-  width: 100px;
-  height: 80px;
-  object-fit: cover;
-
-  margin-left: 15px;
 }
 
 .donate-btn {
@@ -169,7 +215,7 @@ body {
   .nav-links {
     position: absolute;
     right: 0;
-    top: 70px;
+    top: 114px;
     background-color: var(--bg-color);
     flex-direction: column;
     align-items: flex-start;
@@ -189,15 +235,54 @@ body {
     width: 100%;
   }
 
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-    display: none;
-    box-shadow: none;
-    padding: 0;
-    margin-top: 10px;
+  @media screen and (max-width: 992px) {
+   
+    
+    .dropdown-menu {
+     
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none;
+        padding: 0 !important;
+        margin-top: 0;
+        background: #f9f9f9;
+        max-height: 0;
+        overflow: hidden;
+        right: 0px !important;
+  transform: none !important;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .dropdown-menu.active {
+        display: block !important;
+        max-height: 1000px; /* Adjust based on content */
+        padding: 15px 0 !important;
+    }
+    
+    .dropdown-content {
+        flex-direction: column;
+    }
+    
+    .dropdown-image {
+        
+        width: 100% !important;
+        height: 200px;
+        border-radius: 0 !important;
+        margin-bottom: 15px;
+    }
+    
+    .dropdown-links li {
+        padding: 10px 25px !important;
+    }
+    
+    
+    }
+}
+  .dropdown-links {
+    padding: 15px;
   }
 
   .nav-links li:hover .dropdown-menu {
@@ -216,7 +301,17 @@ body {
     display: block;
   }
 }
-
+@media screen and (min-width: 993px) {
+  .dropdown-menu {
+      display: block !important; /* Override any mobile styles */
+  }
+  
+  .nav-links li:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+  }
+}
 /* Burger animation */
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);

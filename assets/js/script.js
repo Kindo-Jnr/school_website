@@ -76,14 +76,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const initBurgerMenu = () => {
         const burger = document.querySelector('.burger');
         if (!burger) return;
-
+    
         burger.addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-            this.classList.toggle('toggle');
+            // Only toggle menu on mobile screens
+            if (window.innerWidth <= 992) {
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.classList.toggle('active');
+                this.classList.toggle('toggle');
+            }
+        });
+    
+        // Close mobile menu when clicking on dropdown parents
+        document.querySelectorAll('.nav-links > li > a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    const navLinks = document.querySelector('.nav-links');
+                    const burger = document.querySelector('.burger');
+                    
+                    // If this is a dropdown parent link
+                    if (this.nextElementSibling && this.nextElementSibling.classList.contains('dropdown-menu')) {
+                        e.preventDefault();
+                        this.nextElementSibling.classList.toggle('active');
+                    } else {
+                        // Regular link - close menu
+                        navLinks.classList.remove('active');
+                        burger.classList.remove('toggle');
+                    }
+                }
+            });
         });
     };
-
     // 4. Partners Animation
     const initPartnersAnimation = () => {
         const track = document.querySelector('.partners-track');
